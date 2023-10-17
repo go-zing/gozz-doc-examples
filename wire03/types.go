@@ -49,6 +49,10 @@ func MockString() String {
 	return "mock"
 }
 
+// mock set struct type provide fields
+// +zz:wire:set=mock:field=*
+type MockConfig struct{ Bool bool }
+
 // mock set value
 // +zz:wire:set=mock
-var MockBool = true
+var mock = MockConfig{Bool: true}

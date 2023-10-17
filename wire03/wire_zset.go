@@ -38,7 +38,10 @@ var (
 		// github.com/go-zing/gozz-doc-examples/wire03.MockString
 		MockString,
 
-		// github.com/go-zing/gozz-doc-examples/wire03.MockBool
-		wire.Value(MockBool),
+		// github.com/go-zing/gozz-doc-examples/wire03.MockConfig
+		wire.FieldsOf(new(MockConfig), "Bool"),
+
+		// github.com/go-zing/gozz-doc-examples/wire03.mock
+		wire.Value(mock),
 	)
 )

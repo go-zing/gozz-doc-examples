@@ -39,7 +39,8 @@ var (
 // github.com/go-zing/gozz-doc-examples/wire03.mockString
 func Initialize_mock_mockString() (mockString, func(), error) {
 	string2 := MockString()
-	bool2 := _wireBoolValue2
+	mockConfig := _wireMockConfigValue
+	bool2 := mockConfig.Bool
 	wire03MockString := mockString{
 		String: string2,
 		Valid:  bool2,
@@ -49,5 +50,5 @@ func Initialize_mock_mockString() (mockString, func(), error) {
 }
 
 var (
-	_wireBoolValue2 = MockBool
+	_wireMockConfigValue = mock
 )
