@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/go-zing/gozz" target="_blank">
-    <img width="180" src="https://raw.githubusercontent.com/go-zing/gozz-doc/main/docs/.vuepress/public/logo.png" alt="logo">
+    <img src="https://raw.githubusercontent.com/go-zing/gozz-doc/main/docs/.vuepress/public/logo.png" alt="logo">
   </a>
 </p>
 
 ## Introduction
 
-This project provide examples for [Gozz Documentation](https://go-zing.github.io/gozz).
+This project provides examples for [Gozz Documentation](https://go-zing.github.io/gozz).
 
 ## Showcase
 
