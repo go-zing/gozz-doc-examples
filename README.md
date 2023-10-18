@@ -16,4 +16,4 @@ This project provides examples for [Gozz Documentation](https://go-zing.github.i
 
 ## License
 
-[Apache-2.0](https://github.com/go-zing/gozz-doc-examples/blob/master/LICENSE)
+[Apache-2.0](https://github.com/go-zing/gozz-doc-examples/blob/main/LICENSE)
