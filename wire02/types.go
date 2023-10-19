@@ -6,6 +6,9 @@ import (
 
 //go:generate gozz run -p "wire" ./
 
+// +zz:wire:bind=Interface
+type Implement struct{}
+
 // +zz:wire:bind=InterfaceX
 // +zz:wire:bind=InterfaceX2:aop
 type Interface interface {
@@ -22,9 +25,6 @@ type Target struct {
 	InterfaceX
 	InterfaceX2
 }
-
-// +zz:wire:bind=Interface
-type Implement struct{}
 
 func (Implement) Foo(ctx context.Context, param int) (result int, err error) {
 	return

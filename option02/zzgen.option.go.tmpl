@@ -3,7 +3,7 @@ import  (
 	{{ end }}
 )
 
-{{ range .Types }} {{ $n  := .Name }} {{ $t := .Type }} {{ if .Typename }} 
+{{ range .Types }} {{ $n  := .Name }} {{ $t := .Type }} {{ if .Typename }}
 // functional options type for {{ $n }}
 type {{ .Typename }} func(*{{ $n }})
 {{ end }}

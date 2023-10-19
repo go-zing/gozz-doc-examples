@@ -1,11 +1,11 @@
-import  (
-	{{ range .Imports }} {{ .Name }} "{{ .Path }}"
-	{{ end }}
+import (
+    {{ range .Imports }}{{ .Name }} "{{ .Path }}"
+    {{ end }}
 )
 
 type _aop_interceptor interface{ Intercept(v interface{},name string,params,results []interface{}) (func(),bool) }
 
-{{ range .Aops }} {{ $n := .Name }} // {{ .Interface }} 
+{{ range .Aops }} {{ $n := .Name }} // {{ .Interface }}
 type (
 	{{ $n }} {{ .Interface }}
 	_impl{{ $n }} struct{ {{ $n }} }
@@ -23,7 +23,7 @@ func(i _impl{{ $n }}){{ .Name }}({{ range $i,$v := $p }}p{{ $i }} {{ $v }},{{ en
 			return
 		}
 	}
-	{{ if $r }}return{{ end }} i.{{ $n }}.{{ .Name }}({{ range $i,$v := $p }}p{{ $i }},{{ end }}) 
+	{{ if $r }}return{{ end }} i.{{ $n }}.{{ .Name }}({{ range $i,$v := $p }}p{{ $i }},{{ end }})
 }
 
 {{ end }} {{ end }}

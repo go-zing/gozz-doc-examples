@@ -1,5 +1,5 @@
 import (
-	{{ range .Imports }} {{ .Name }} "{{ .Path }}" 
+	{{ range .Imports }} {{ .Name }} "{{ .Path }}"
 	{{ end }}
 )
 
@@ -19,7 +19,7 @@ func (s Apis) Range(fn func(interface{},[]map[string]interface{})){
 	}
 }
 
-{{ range .Interfaces }} 
+{{ range .Interfaces }}
 func (s Apis) _{{ .FieldName }}() (interface{},[]map[string]interface{}){
 	t := s.{{ .FieldName }}
 	return &t,[]map[string]interface{}{	{{ range  .Handlers }}
@@ -28,7 +28,7 @@ func (s Apis) _{{ .FieldName }}() (interface{},[]map[string]interface{}){
 			"resource": "{{ .Resource }}",
 			"options": map[string]string{ {{ range $key,$value := .Options }}
 			{{ quote $key }} : {{ quote $value }}, {{ end }}
-			},  {{ if .Invoke }} 
+			},  {{ if .Invoke }}
 			"invoke": {{ .Invoke }}, {{ end }}
 		},	{{ end }}
 	}
