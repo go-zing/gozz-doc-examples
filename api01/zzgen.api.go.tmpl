@@ -25,7 +25,6 @@ func (s Apis) _{{ .FieldName }}() (interface{},[]map[string]interface{}){
 	return &t,[]map[string]interface{}{	{{ range  .Handlers }}
 		{
 			"name": "{{ .Name }}",
-			"method": "{{ .Method }}",
 			"resource": "{{ .Resource }}",
 			"options": map[string]string{ {{ range $key,$value := .Options }}
 			{{ quote $key }} : {{ quote $value }}, {{ end }}

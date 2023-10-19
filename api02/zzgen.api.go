@@ -25,9 +25,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 	return &t, []map[string]interface{}{
 		{
 			"name":     "Empty",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "empty",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				t.Empty()
 				return nil, nil
@@ -35,30 +36,34 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Ret",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
-			"invoke":   func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return t.Ret(), nil },
+			"resource": "get",
+			"options": map[string]string{
+				"path": "ret",
+			},
+			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return t.Ret(), nil },
 		},
 		{
 			"name":     "Error",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
-			"invoke":   func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return nil, t.Error() },
+			"resource": "get",
+			"options": map[string]string{
+				"path": "error",
+			},
+			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return nil, t.Error() },
 		},
 		{
 			"name":     "RetError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
-			"invoke":   func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return t.RetError() },
+			"resource": "get",
+			"options": map[string]string{
+				"path": "ret_error",
+			},
+			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) { return t.RetError() },
 		},
 		{
 			"name":     "Context",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				t.Context(ctx)
 				return nil, nil
@@ -66,36 +71,40 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ContextRet",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_ret",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				return t.ContextRet(ctx), nil
 			},
 		},
 		{
 			"name":     "ContextError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				return nil, t.ContextError(ctx)
 			},
 		},
 		{
 			"name":     "ContextRetError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_ret_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				return t.ContextRetError(ctx)
 			},
 		},
 		{
 			"name":     "Param",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "param",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -107,9 +116,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ParamRet",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "param_ret",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -120,9 +130,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ParamError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "param_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -133,9 +144,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ParamRetError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "param_ret_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -146,9 +158,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ContextParam",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_param",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -160,9 +173,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ContextParamRet",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_param_ret",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -173,9 +187,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ContextParamError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_param_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -186,9 +201,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ContextParamRetError",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "context_param_ret_error",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {
@@ -199,9 +215,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "ComplexParam",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "complex_param",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in map[context.Context][]struct {
 					Field []func(context.Context) interface {
@@ -217,9 +234,10 @@ func (s Apis) _T() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "PtrParam",
-			"method":   "get",
-			"resource": "",
-			"options":  map[string]string{},
+			"resource": "get",
+			"options": map[string]string{
+				"path": "ptr_param",
+			},
 			"invoke": func(ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 				var in int
 				if err := dec(&in); err != nil {

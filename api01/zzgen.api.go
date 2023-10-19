@@ -27,8 +27,7 @@ func (s Apis) _BookService() (interface{}, []map[string]interface{}) {
 	return &t, []map[string]interface{}{
 		{
 			"name":     "List",
-			"method":   "get",
-			"resource": "",
+			"resource": "get",
 			"options": map[string]string{
 				"id":     "BookService.List",
 				"prefix": "book_service",
@@ -43,8 +42,7 @@ func (s Apis) _BookService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Get",
-			"method":   "get",
-			"resource": "{id}",
+			"resource": "get|{id}",
 			"options": map[string]string{
 				"id":     "BookService.Get",
 				"prefix": "book_service",
@@ -59,8 +57,7 @@ func (s Apis) _BookService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Create",
-			"method":   "post",
-			"resource": "",
+			"resource": "post",
 			"options": map[string]string{
 				"id":     "BookService.Create",
 				"prefix": "book_service",
@@ -75,8 +72,7 @@ func (s Apis) _BookService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Edit",
-			"method":   "put",
-			"resource": "{id}",
+			"resource": "put|{id}",
 			"options": map[string]string{
 				"id":     "BookService.Edit",
 				"prefix": "book_service",
@@ -97,8 +93,7 @@ func (s Apis) _UserService() (interface{}, []map[string]interface{}) {
 	return &t, []map[string]interface{}{
 		{
 			"name":     "List",
-			"method":   "get",
-			"resource": "",
+			"resource": "get",
 			"options": map[string]string{
 				"id":     "UserService.List",
 				"prefix": "user_service",
@@ -113,8 +108,7 @@ func (s Apis) _UserService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Get",
-			"method":   "get",
-			"resource": "{id}",
+			"resource": "get|{id}",
 			"options": map[string]string{
 				"id":     "UserService.Get",
 				"prefix": "user_service",
@@ -129,8 +123,7 @@ func (s Apis) _UserService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Create",
-			"method":   "post",
-			"resource": "",
+			"resource": "post",
 			"options": map[string]string{
 				"id":     "UserService.Create",
 				"prefix": "user_service",
@@ -145,8 +138,7 @@ func (s Apis) _UserService() (interface{}, []map[string]interface{}) {
 		},
 		{
 			"name":     "Edit",
-			"method":   "put",
-			"resource": "{id}",
+			"resource": "put|{id}",
 			"options": map[string]string{
 				"id":     "UserService.Edit",
 				"prefix": "user_service",
