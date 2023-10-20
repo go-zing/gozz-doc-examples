@@ -10,6 +10,6 @@ import (
 )
 
 // github.com/go-zing/gozz-doc-examples/overview02.Application
-func Initialize_Application(Config) (Application, func(), error) {
+func Initialize_Application(*Config) (Application, func(), error) {
 	panic(wire.Build(_Set))
 }

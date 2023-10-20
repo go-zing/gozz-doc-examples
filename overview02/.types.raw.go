@@ -7,28 +7,30 @@ import (
 	"time"
 )
 
+//go:generate gozz run -p "wire" ./
+
 type (
 	// root config for unmarshal config file
 	Config struct {
-		Server ServerConfig
-		Sql    SqlConfig
-		Redis  RedisConfig
+		Server ServerConfig `yaml:"server"`
+		Sql    SqlConfig    `yaml:"sql"`
+		Redis  RedisConfig  `yaml:"redis"`
 	}
 
 	// http server config
 	ServerConfig struct {
-		Addr string
+		Addr string `yaml:"addr"`
 	}
 
 	// sql config
 	SqlConfig struct {
-		Dsn string
+		Dsn string `yaml:"dsn"`
 	}
 
 	// redis config
 	RedisConfig struct {
-		Host string
-		Port string
+		Host string `yaml:"host"`
+		Port string `yaml:"port"`
 	}
 )
 
@@ -51,7 +53,8 @@ type Store interface {
 }
 
 // provide sql connection from sql config
-func ProvideSql(config SqlConfig) (SqlConn, error) {
+// +zz:wire:bind=SqlConn
+func ProvideSql(config SqlConfig) (*sql.DB, error) {
 	panic("not implemented")
 }
 
@@ -72,6 +75,14 @@ type ServerHandlerImpl struct {
 	Store Store
 }
 
+func (impl *ServerHandlerImpl) GetInt(ctx context.Context) (int, error) {
+	panic("not implemented")
+}
+
+func (impl *ServerHandlerImpl) GetString(ctx context.Context) (string, error) {
+	panic("not implemented")
+}
+
 // the entry of application
 type Application interface {
 	Run()
@@ -81,4 +92,8 @@ type Application interface {
 type application struct {
 	Server  *http.Server
 	Handler ServiceHandler
+}
+
+func (application application) Run() {
+	panic("not implemented")
 }

@@ -55,8 +55,8 @@ type Store interface {
 }
 
 // provide sql connection from sql config
-// +zz:wire
-func ProvideSql(config SqlConfig) (SqlConn, error) {
+// +zz:wire:bind=SqlConn
+func ProvideSql(config SqlConfig) (*sql.DB, error) {
 	panic("not implemented")
 }
 
@@ -88,7 +88,7 @@ func (impl *ServerHandlerImpl) GetString(ctx context.Context) (string, error) {
 }
 
 // the entry of application
-// +zz:wire:inject=./:param=Config
+// +zz:wire:inject=./:param=*Config
 type Application interface {
 	Run()
 }

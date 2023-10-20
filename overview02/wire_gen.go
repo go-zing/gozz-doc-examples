@@ -9,11 +9,11 @@ package overview02
 // Injectors from wire_zinject.go:
 
 // github.com/go-zing/gozz-doc-examples/overview02.Application
-func Initialize_Application(config Config) (Application, func(), error) {
+func Initialize_Application(config *Config) (Application, func(), error) {
 	serverConfig := config.Server
 	server := ProvideHttpServer(serverConfig)
 	sqlConfig := config.Sql
-	sqlConn, err := ProvideSql(sqlConfig)
+	db, err := ProvideSql(sqlConfig)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -23,7 +23,7 @@ func Initialize_Application(config Config) (Application, func(), error) {
 		return nil, nil, err
 	}
 	serverHandlerImpl := &ServerHandlerImpl{
-		Sql:   sqlConn,
+		Sql:   db,
 		Store: store,
 	}
 	overview02_impl_aop_ServiceHandler := &_impl_aop_ServiceHandler{

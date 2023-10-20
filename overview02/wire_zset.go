@@ -6,18 +6,20 @@
 package overview02
 
 import (
+	"database/sql"
 	wire "github.com/google/wire"
 )
 
 var (
 	_Set = wire.NewSet(
 		// github.com/go-zing/gozz-doc-examples/overview02.Config
-		wire.FieldsOf(new(Config), "Redis", "Server", "Sql"),
+		wire.FieldsOf(new(*Config), "Redis", "Server", "Sql"),
 
 		// github.com/go-zing/gozz-doc-examples/overview02.ProvideHttpServer
 		ProvideHttpServer,
 
 		// github.com/go-zing/gozz-doc-examples/overview02.ProvideSql
+		wire.Bind(new(SqlConn), new(*sql.DB)),
 		ProvideSql,
 
 		// github.com/go-zing/gozz-doc-examples/overview02.ProvideRedisStore
