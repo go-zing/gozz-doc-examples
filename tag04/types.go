@@ -28,8 +28,8 @@ type (
 		Id     string `bson:"id" json:"id"`
 		UserId string `bson:"user_id" json:"user_id"`
 		BookId string `bson:"book_id" json:"book_id"`
-		// +zz:tag:json,bson:{{ upper .FieldName | upper }}
-		CreatedAt time.Time `bson:"CREATEDAT" json:"CREATEDAT"`
+		// +zz:tag:json,bson:{{ snake .FieldName | upper }}
+		CreatedAt time.Time `bson:"CREATED_AT" json:"CREATED_AT"`
 		// +zz:tag:+json:,omitempty
 		UpdatedAt time.Time `bson:"updated_at" json:"updated_at,omitempty"`
 	}
