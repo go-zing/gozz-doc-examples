@@ -53,7 +53,6 @@ type Store interface {
 }
 
 // provide sql connection from sql config
-// +zz:wire:bind=SqlConn
 func ProvideSql(config SqlConfig) (*sql.DB, error) {
 	panic("not implemented")
 }
