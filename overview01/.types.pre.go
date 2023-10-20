@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-//go:generate gozz run -p "doc" -p "api:prefix=book" -p "impl" -p "tag" ./
+//go:generate gozz run -p "doc" -p "api:prefix=book:foo=bar" -p "impl" -p "tag" ./
 
 // +zz:doc
 // +zz:api:./
@@ -35,71 +35,45 @@ type (
 	// Uri path id param
 	// +zz:tag:uri:{{ snake .FieldName }}
 	QueryId struct {
-		Id int `json:"id" uri:"id"`
+		Id int
 	}
 
 	// Query book entities param
 	// +zz:tag:query:{{ snake .FieldName }}
 	QueryBook struct {
 		// Query pagination offser no
-		PageNo int `json:"page_no" query:"page_no"`
+		PageNo int
 		// Query pagination size
-		PageSize int `json:"page_size" query:"page_size"`
+		PageSize int
 	}
 
 	// Form to edit or create book entity
 	FormBook struct {
 		QueryId
 		// Title of book entity
-		Title string `json:"title"`
+		Title string
 		// Type of book entity
-		Type string `json:"type"`
+		Type string
 	}
 
 	// Book entity
 	Book struct {
 		FormBook
 		// Book entity create time
-		CreatedAt time.Time `json:"created_at"`
+		CreatedAt time.Time
 		// Book entity create user
-		CreatedBy string `json:"created_by"`
+		CreatedBy string
 		// Book entity last update time
-		UpdatedAt time.Time `json:"updated_at"`
+		UpdatedAt time.Time
 		// Book entity last update user
-		UpdatedBy string `json:"updated_by"`
+		UpdatedBy string
 	}
 
 	// Book entities list
 	ListBook struct {
 		// Query pagination total count in database
-		Total int `json:"total"`
+		Total int
 		// Entities list data
-		List []Book `json:"list"`
+		List []Book
 	}
 )
-
-var (
-	_ BookService = (*Implement)(nil)
-)
-
-type Implement struct{}
-
-func (implement Implement) Get(ctx context.Context, query QueryId) (book Book, err error) {
-	panic("not implemented")
-}
-
-func (implement Implement) List(ctx context.Context, query QueryBook) (list ListBook, err error) {
-	panic("not implemented")
-}
-
-func (implement Implement) Create(ctx context.Context, form FormBook) (book Book, err error) {
-	panic("not implemented")
-}
-
-func (implement Implement) Edit(ctx context.Context, form FormBook) (book Book, err error) {
-	panic("not implemented")
-}
-
-func (implement Implement) Delete(ctx context.Context, query QueryId) (err error) {
-	panic("not implemented")
-}
