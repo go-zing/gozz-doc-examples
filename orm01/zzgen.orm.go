@@ -53,7 +53,7 @@ func (m *CurrentDeptEmp) FieldMapping(dst map[string]interface{}) {
 
 type SliceCurrentDeptEmp []CurrentDeptEmp
 
-func (s *SliceCurrentDeptEmp) Range(f func(interface{}, bool) bool) {
+func (s *SliceCurrentDeptEmp) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -87,7 +87,7 @@ func (m *Departments) FieldMapping(dst map[string]interface{}) {
 
 type SliceDepartments []Departments
 
-func (s *SliceDepartments) Range(f func(interface{}, bool) bool) {
+func (s *SliceDepartments) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -127,7 +127,7 @@ func (m *DeptEmp) FieldMapping(dst map[string]interface{}) {
 
 type SliceDeptEmp []DeptEmp
 
-func (s *SliceDeptEmp) Range(f func(interface{}, bool) bool) {
+func (s *SliceDeptEmp) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -165,7 +165,7 @@ func (m *DeptEmpLatestDate) FieldMapping(dst map[string]interface{}) {
 
 type SliceDeptEmpLatestDate []DeptEmpLatestDate
 
-func (s *SliceDeptEmpLatestDate) Range(f func(interface{}, bool) bool) {
+func (s *SliceDeptEmpLatestDate) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -205,7 +205,7 @@ func (m *DeptManager) FieldMapping(dst map[string]interface{}) {
 
 type SliceDeptManager []DeptManager
 
-func (s *SliceDeptManager) Range(f func(interface{}, bool) bool) {
+func (s *SliceDeptManager) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -248,7 +248,7 @@ func (m *Employees) FieldMapping(dst map[string]interface{}) {
 
 type SliceEmployees []Employees
 
-func (s *SliceEmployees) Range(f func(interface{}, bool) bool) {
+func (s *SliceEmployees) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -288,7 +288,7 @@ func (m *Salaries) FieldMapping(dst map[string]interface{}) {
 
 type SliceSalaries []Salaries
 
-func (s *SliceSalaries) Range(f func(interface{}, bool) bool) {
+func (s *SliceSalaries) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
@@ -328,7 +328,7 @@ func (m *Titles) FieldMapping(dst map[string]interface{}) {
 
 type SliceTitles []Titles
 
-func (s *SliceTitles) Range(f func(interface{}, bool) bool) {
+func (s *SliceTitles) Iterate(f func(interface{}, bool) bool) {
 	for i := 0; ; i++ {
 		if c := i >= len(*s); !c {
 			if !f(&(*s)[i], c) {
