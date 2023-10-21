@@ -44,13 +44,11 @@ type CurrentDeptEmp struct {
 
 func (CurrentDeptEmp) TableName() string { return TableCurrentDeptEmp }
 
-func (m *CurrentDeptEmp) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"dept_no":   &m.DeptNo,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *CurrentDeptEmp) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["dept_no"] = &m.DeptNo
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceCurrentDeptEmp []CurrentDeptEmp
@@ -82,11 +80,9 @@ type Departments struct {
 
 func (Departments) TableName() string { return TableDepartments }
 
-func (m *Departments) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"dept_no":   &m.DeptNo,
-		"dept_name": &m.DeptName,
-	}
+func (m *Departments) FieldMapping(dst map[string]interface{}) {
+	dst["dept_no"] = &m.DeptNo
+	dst["dept_name"] = &m.DeptName
 }
 
 type SliceDepartments []Departments
@@ -122,13 +118,11 @@ type DeptEmp struct {
 
 func (DeptEmp) TableName() string { return TableDeptEmp }
 
-func (m *DeptEmp) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"dept_no":   &m.DeptNo,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *DeptEmp) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["dept_no"] = &m.DeptNo
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceDeptEmp []DeptEmp
@@ -163,12 +157,10 @@ type DeptEmpLatestDate struct {
 
 func (DeptEmpLatestDate) TableName() string { return TableDeptEmpLatestDate }
 
-func (m *DeptEmpLatestDate) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *DeptEmpLatestDate) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceDeptEmpLatestDate []DeptEmpLatestDate
@@ -204,13 +196,11 @@ type DeptManager struct {
 
 func (DeptManager) TableName() string { return TableDeptManager }
 
-func (m *DeptManager) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"dept_no":   &m.DeptNo,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *DeptManager) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["dept_no"] = &m.DeptNo
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceDeptManager []DeptManager
@@ -248,14 +238,12 @@ type Employees struct {
 
 func (Employees) TableName() string { return TableEmployees }
 
-func (m *Employees) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":     &m.EmpNo,
-		"birth_date": &m.BirthDate,
-		"first_name": &m.FirstName,
-		"last_name":  &m.LastName,
-		"gender":     &m.Gender,
-	}
+func (m *Employees) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["birth_date"] = &m.BirthDate
+	dst["first_name"] = &m.FirstName
+	dst["last_name"] = &m.LastName
+	dst["gender"] = &m.Gender
 }
 
 type SliceEmployees []Employees
@@ -291,13 +279,11 @@ type Salaries struct {
 
 func (Salaries) TableName() string { return TableSalaries }
 
-func (m *Salaries) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"salary":    &m.Salary,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *Salaries) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["salary"] = &m.Salary
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceSalaries []Salaries
@@ -333,13 +319,11 @@ type Titles struct {
 
 func (Titles) TableName() string { return TableTitles }
 
-func (m *Titles) FieldMapping() map[string]interface{} {
-	return map[string]interface{}{
-		"emp_no":    &m.EmpNo,
-		"title":     &m.Title,
-		"from_date": &m.FromDate,
-		"to_date":   &m.ToDate,
-	}
+func (m *Titles) FieldMapping(dst map[string]interface{}) {
+	dst["emp_no"] = &m.EmpNo
+	dst["title"] = &m.Title
+	dst["from_date"] = &m.FromDate
+	dst["to_date"] = &m.ToDate
 }
 
 type SliceTitles []Titles
