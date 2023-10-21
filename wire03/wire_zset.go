@@ -29,6 +29,9 @@ var (
 
 		// github.com/go-zing/gozz-doc-examples/wire03.Target
 		wire.Struct(new(Target), "*"),
+
+		// github.com/go-zing/gozz-doc-examples/wire03.Set
+		Set,
 	)
 
 	_mockSet = wire.NewSet(
@@ -39,7 +42,7 @@ var (
 		MockString,
 
 		// github.com/go-zing/gozz-doc-examples/wire03.MockConfig
-		wire.FieldsOf(new(MockConfig), "Bool"),
+		wire.FieldsOf(new(*MockConfig), "Bool"),
 
 		// github.com/go-zing/gozz-doc-examples/wire03.mock
 		wire.Value(mock),

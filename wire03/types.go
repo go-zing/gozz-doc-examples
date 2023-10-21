@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"database/sql"
 	"io"
+
+	"github.com/google/wire"
 )
 
 //go:generate gozz run -p "wire" ./
@@ -36,7 +38,14 @@ type Target struct {
 	Buffer     *bytes.Buffer
 	Writer     io.Writer
 	NullString NullString
+	Int        int
 }
+
+// origin wire set
+// +zz:wire
+var Set = wire.NewSet(wire.Value(Int))
+
+var Int = 0
 
 // mock set injector
 // +zz:wire:inject=/:set=mock
@@ -55,4 +64,4 @@ type MockConfig struct{ Bool bool }
 
 // mock set value
 // +zz:wire:set=mock
-var mock = MockConfig{Bool: true}
+var mock = &MockConfig{Bool: true}

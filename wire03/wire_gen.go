@@ -21,10 +21,12 @@ func Initialize_Target() (*Target, func(), error) {
 		String: string2,
 		Valid:  bool2,
 	}
+	int2 := _wireIntValue
 	target := &Target{
 		Buffer:     buffer,
 		Writer:     wire03_impl_aop_io_Writer,
 		NullString: wire03NullString,
+		Int:        int2,
 	}
 	return target, func() {
 	}, nil
@@ -34,6 +36,7 @@ var (
 	_wireBufferValue      = Buffer
 	_wireBytesBufferValue = Buffer
 	_wireBoolValue        = Bool
+	_wireIntValue         = Int
 )
 
 // github.com/go-zing/gozz-doc-examples/wire03.mockString
