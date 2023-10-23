@@ -7,6 +7,7 @@ package overview02
 
 import (
 	"database/sql"
+	v8 "github.com/go-redis/redis/v8"
 	wire "github.com/google/wire"
 )
 
@@ -23,7 +24,12 @@ var (
 		ProvideSql,
 
 		// github.com/go-zing/gozz-doc-examples/overview02.ProvideRedisStore
+		wire.Bind(new(v8.Cmdable), new(*v8.Client)),
 		ProvideRedisStore,
+
+		// github.com/go-zing/gozz-doc-examples/overview02.RedisStore
+		wire.Bind(new(Store), new(*RedisStore)),
+		wire.Struct(new(RedisStore), "*"),
 
 		// github.com/go-zing/gozz-doc-examples/overview02.ServerHandlerImpl
 		wire.Bind(new(_aop_ServiceHandler), new(*ServerHandlerImpl)),

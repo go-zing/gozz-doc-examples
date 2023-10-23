@@ -3,11 +3,12 @@ package overview02
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"net/http"
 	"time"
-)
 
-//go:generate gozz run -p "wire" ./
+	"github.com/go-redis/redis/v8"
+)
 
 type (
 	// root config for unmarshal config file
@@ -54,12 +55,27 @@ type Store interface {
 
 // provide sql connection from sql config
 func ProvideSql(config SqlConfig) (*sql.DB, error) {
-	panic("not implemented")
+	return sql.Open("mysql", config.Dsn)
 }
 
 // provide kv store from redis config
-func ProvideRedisStore(config RedisConfig) (Store, error) {
-	panic("not implemented")
+func ProvideRedisStore(config RedisConfig) (*redis.Client, error) {
+	rdb := redis.NewClient(&redis.Options{
+		Addr: fmt.Sprintf("%s:%s", config.Host, config.Port),
+	})
+	return rdb, nil
+}
+
+type RedisStore struct {
+	redis.Cmdable
+}
+
+func (s RedisStore) Set(ctx context.Context, key string, value []byte, exp time.Duration) (err error) {
+	return s.Cmdable.Set(ctx, key, value, exp).Err()
+}
+
+func (s RedisStore) Get(ctx context.Context, key string) (value []byte, err error) {
+	return s.Cmdable.Get(ctx, key).Bytes()
 }
 
 // biz service handler
