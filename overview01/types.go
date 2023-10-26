@@ -35,6 +35,7 @@ type (
 	// Uri path id param
 	// +zz:tag:uri:{{ snake .FieldName }}
 	QueryId struct {
+		// Entity Id
 		Id int `json:"id" uri:"id"`
 	}
 

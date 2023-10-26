@@ -22,7 +22,8 @@ var (
 	}
 
 	_doc_QueryId = map[string]string{
-		"": "Uri path id param",
+		"":   "Uri path id param",
+		"Id": "Entity Id",
 	}
 
 	_doc_QueryBook = map[string]string{
