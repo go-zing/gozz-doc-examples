@@ -13,10 +13,10 @@ github.com/go-openapi/swag v0.19.5/go.mod h1:POnQmlKehdgb5mhVOsnJFsivZCEZ/vjK9gh
 github.com/go-openapi/swag v0.19.15 h1:D2NRCBzS9/pEY3gP9Nl8aDqGUcPFrwG2p+CNFrLyrCM=
 github.com/go-openapi/swag v0.19.15/go.mod h1:QYRuS/SOXUCsnplDa677K7+DxSOj6IPNl/eQntq43wQ=
 github.com/go-zing/gozz-kit v0.0.0-20231026063134-f0e62d90843b/go.mod h1:mcTgdwgrnQcb/M+khNZaKANUuZUmTy3EiBO076150Z0=
-github.com/go-zing/gozz-kit v0.0.0-20231026104500-54aa0f60ae94 h1:Ihsx9eoGMZudGqgEdKsXvGF9HaptF+v0EKvKyY8iaCU=
-github.com/go-zing/gozz-kit v0.0.0-20231026104500-54aa0f60ae94/go.mod h1:mcTgdwgrnQcb/M+khNZaKANUuZUmTy3EiBO076150Z0=
-github.com/go-zing/gozz-kit/zapi/zswagger v0.0.0-20231026104500-54aa0f60ae94 h1:zmBzQ4KMmDvEN19I4Fu55/xCAoWFXSZSTmFWFtUGds4=
-github.com/go-zing/gozz-kit/zapi/zswagger v0.0.0-20231026104500-54aa0f60ae94/go.mod h1:JZcofXjpsLhQ+0Px3si0+x18hT/1H2fEqoszqUkMOvk=
+github.com/go-zing/gozz-kit v0.0.0-20231026104701-8f620465c512 h1:la2oag0nnCnui9Ua+wSkVaKp3nvLfqo96YQMW+wPuA4=
+github.com/go-zing/gozz-kit v0.0.0-20231026104701-8f620465c512/go.mod h1:mcTgdwgrnQcb/M+khNZaKANUuZUmTy3EiBO076150Z0=
+github.com/go-zing/gozz-kit/zapi/zswagger v0.0.0-20231026104701-8f620465c512 h1:MSopq1Qlf0Ay9HIcGNLxGiO4G9cYwJpAdwWIaueD1Xs=
+github.com/go-zing/gozz-kit/zapi/zswagger v0.0.0-20231026104701-8f620465c512/go.mod h1:JZcofXjpsLhQ+0Px3si0+x18hT/1H2fEqoszqUkMOvk=
 github.com/josharian/intern v1.0.0 h1:vlS4z54oSdjm0bgjRigI+G1HpF+tI+9rE5LLzOg8HmY=
 github.com/josharian/intern v1.0.0/go.mod h1:5DoeVV0s6jJacbCEi61lwdGj/aVlrQvzHFFd8Hwg//Y=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=

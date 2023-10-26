@@ -75,6 +75,7 @@
 					{
 						"type": "integer",
 						"format": "int64",
+						"description": "Entity Id",
 						"name": "id",
 						"in": "path",
 						"required": true
@@ -99,6 +100,7 @@
 					{
 						"type": "integer",
 						"format": "int64",
+						"description": "Entity Id",
 						"name": "id",
 						"in": "path",
 						"required": true
@@ -130,6 +132,7 @@
 					{
 						"type": "integer",
 						"format": "int64",
+						"description": "Entity Id",
 						"name": "id",
 						"in": "path",
 						"required": true
