@@ -3,7 +3,7 @@
 package doc02
 
 var (
-	_types_doc = map[interface{}]map[string]string{
+	ZZ_types_doc = map[interface{}]map[string]string{
 		(*T)(nil): _doc_T,
 	}
 
@@ -13,5 +13,3 @@ var (
 		"Field2": "13\n14",
 	}
 )
-
-func (T) FieldDoc(f string) string { return _doc_T[f] }

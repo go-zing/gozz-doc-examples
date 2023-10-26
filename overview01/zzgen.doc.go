@@ -3,7 +3,7 @@
 package overview01
 
 var (
-	_types_doc = map[interface{}]map[string]string{
+	ZZ_types_doc = map[interface{}]map[string]string{
 		(*BookService)(nil): _doc_BookService,
 		(*QueryId)(nil):     _doc_QueryId,
 		(*QueryBook)(nil):   _doc_QueryBook,
@@ -51,13 +51,3 @@ var (
 		"List":  "Entities list data",
 	}
 )
-
-func (QueryId) FieldDoc(f string) string { return _doc_QueryId[f] }
-
-func (QueryBook) FieldDoc(f string) string { return _doc_QueryBook[f] }
-
-func (FormBook) FieldDoc(f string) string { return _doc_FormBook[f] }
-
-func (Book) FieldDoc(f string) string { return _doc_Book[f] }
-
-func (ListBook) FieldDoc(f string) string { return _doc_ListBook[f] }

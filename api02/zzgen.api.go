@@ -12,7 +12,7 @@ type Apis struct {
 	T T
 }
 
-func (s Apis) Range(fn func(interface{}, []map[string]interface{})) {
+func (s Apis) Iterate(fn func(interface{}, []map[string]interface{})) {
 	for _, f := range []func() (interface{}, []map[string]interface{}){
 		s._T,
 	} {

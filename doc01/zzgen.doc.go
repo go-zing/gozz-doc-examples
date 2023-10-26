@@ -3,14 +3,14 @@
 package doc01
 
 var (
-	_types_doc = map[interface{}]map[string]string{
+	ZZ_types_doc = map[interface{}]map[string]string{
 		(*UUID)(nil):   _doc_UUID,
 		(*Entity)(nil): _doc_Entity,
 		(*User)(nil):   _doc_User,
 		(*Book)(nil):   _doc_Book,
 	}
 
-	_values_doc = map[string]map[interface{}]string{
+	ZZ_values_doc = map[string]map[interface{}]string{
 		"gender_type": map[interface{}]string{
 			GenderFemale: "female",
 			GenderMale:   "male",
@@ -47,9 +47,3 @@ var (
 		"Type": "book type",
 	}
 )
-
-func (UUID) FieldDoc(f string) string { return _doc_UUID[f] }
-
-func (User) FieldDoc(f string) string { return _doc_User[f] }
-
-func (Book) FieldDoc(f string) string { return _doc_Book[f] }
