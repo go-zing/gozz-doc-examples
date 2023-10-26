@@ -11,6 +11,8 @@ import (
 )
 
 //go:generate gozz run -p "wire" ./
+//go:generate sh -c "go run ./cmd/stgragh | dot -Tpng -o structure.png"
+//go:generate sh -c "go run ./cmd/stgragh | dot -Tsvg -o structure.svg"
 
 type (
 	// root config for unmarshal config file
