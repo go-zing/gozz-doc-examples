@@ -73,7 +73,8 @@
 				"operationId": "github.com/go-zing/gozz-doc-examples/overview01.BookService.Get",
 				"parameters": [
 					{
-						"type": "string",
+						"type": "integer",
+						"format": "int64",
 						"name": "id",
 						"in": "path",
 						"required": true
@@ -96,7 +97,8 @@
 				"operationId": "github.com/go-zing/gozz-doc-examples/overview01.BookService.Edit",
 				"parameters": [
 					{
-						"type": "string",
+						"type": "integer",
+						"format": "int64",
 						"name": "id",
 						"in": "path",
 						"required": true
@@ -126,7 +128,8 @@
 				"operationId": "github.com/go-zing/gozz-doc-examples/overview01.BookService.Delete",
 				"parameters": [
 					{
-						"type": "string",
+						"type": "integer",
+						"format": "int64",
 						"name": "id",
 						"in": "path",
 						"required": true
